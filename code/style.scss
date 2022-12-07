@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 //colors
-$primary: #9356DC;
-$secondary: #FF79DA;
+$primary: #9356DC; 
+$secondary: #FF79DA; 
 $tertiary: #99E2D0;
 $lighter-grey: #F3F2F2; 
 $dark-grey: #656366;
@@ -42,6 +42,11 @@ $icon-degree: 3deg;
 
 @mixin  gradient($degree) {
     background: linear-gradient($degree, $secondary 0%, $primary 100%);
+}
+
+@mixin gradient-btn-hover {
+    background: linear-gradient($button-degree, lighten($secondary, 5%) 0%, lighten($primary, 5%) 100%);
+    box-shadow: 0 6px 14px 0 gray;
 }
 
 @mixin border-radius($radius) {
@@ -114,6 +119,11 @@ header {
     color: white;
     padding: 20px;
     font-weight: 400;
+    box-shadow: 0px 6px 14px 0px #0000003d;
+
+    &:hover {
+        @include gradient-btn-hover;
+    }
 }
 
 .functioning_container__title {
@@ -132,38 +142,42 @@ header {
 .functioning_container__list__item {
     @include element-centered(row);
     @include font-bold;
-    @include border-radius(20px);
+    @include border-radius(15px);
     gap: 20px;
     font-size: 18px;
-    padding: 20px 40px;
+    padding: 20px 40px 20px 0;
     background-color: $lighter-grey;
     width: 100%;
     box-shadow: 0px 6px 7px 0px #DBDBDB;
-}
 
-.functioning_container__list__item--bg-grey-purple {
-    @extend .functioning_container__list__item;
-    background-color: $purple-grey;
+
+    &:hover {
+        background-color: $purple-grey;
+
+        .functioning_container__list__item__icon {
+            color: $primary;
+        }
+    }
 }
 
 .functioning_container__list__item__order {
     @include element-centered(row);
     @include border-radius(50%);
-    width: 40px;
-    height: 40px;
-    padding: 10px;
+    width: 25px;
+    height: 25px;
     color: white;
     background-color: $primary;
-    margin: 0 -5px;
+    margin-left: -57px;
 }
 
 .functioning_container__list__item__icon {
     color: $dark-grey;
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
 }
 
-.functioning_container__list__item__icon--purple {
-    color: $primary;
-}
+
 
 .restaurant_container {
     @include display-flex-direction(column);
@@ -196,7 +210,6 @@ header {
     @include p-size;
     width: 100px;
     padding: 10px;
-    float: right;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -240,30 +253,29 @@ header {
     margin: 0;
 }
 
-.restaurant_container__card__icon--filled-heart {
-    display: none;
-}
-
 .restaurant_container__card__icon {
     svg {
         font-size: 25px;
+    }
 
-        
-
+    .restaurant_container__card__icon--filled-heart {
+        display: none;
+    }
+    
         &:hover {
-            .restaurant_container__card__icon--filled-heart {
-                display: inline;
-            }
-
+            
             .restaurant_container__card__icon--empty-heart {
                 display: none;
             }
-
-            fill: url(#heart-gradient);
-            @include gradient($icon-degree);
-            cursor: pointer;
+    
+            .restaurant_container__card__icon--filled-heart {
+                display: inline-block;
+                fill: url(#heart-gradient);
+                // @include gradient($icon-degree);
+                cursor: pointer;
+            }
         }
-    }
+    
 }
 
 .footer {
@@ -287,4 +299,9 @@ header {
 .footer__list__item {
     @include p-size;
     color: white;
+
+    a {
+        @extend .footer__list__item;
+        text-decoration: none;
+    }
 }

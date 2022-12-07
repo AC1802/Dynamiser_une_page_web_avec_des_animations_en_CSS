@@ -72,6 +72,11 @@ header {
   color: white;
   padding: 20px;
   font-weight: 400;
+  box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.2392156863);
+}
+.location_container__btn:hover {
+  background: linear-gradient(163deg, #ff93e1 0%, #a16be0 100%);
+  box-shadow: 0 6px 14px 0 gray;
 }
 
 .functioning_container__title {
@@ -91,23 +96,25 @@ header {
   padding: 20px;
 }
 
-.functioning_container__list__item, .functioning_container__list__item--bg-grey-purple {
+.functioning_container__list__item {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  border-radius: 20px;
+  border-radius: 15px;
   gap: 20px;
   font-size: 18px;
-  padding: 20px 40px;
+  padding: 20px 40px 20px 0;
   background-color: #F3F2F2;
   width: 100%;
   box-shadow: 0px 6px 7px 0px #DBDBDB;
 }
-
-.functioning_container__list__item--bg-grey-purple {
+.functioning_container__list__item:hover {
   background-color: #F9EFF9;
+}
+.functioning_container__list__item:hover .functioning_container__list__item__icon {
+  color: #9356DC;
 }
 
 .functioning_container__list__item__order {
@@ -116,20 +123,18 @@ header {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
+  width: 25px;
+  height: 25px;
   color: white;
   background-color: #9356DC;
-  margin: 0 -5px;
+  margin-left: -57px;
 }
 
 .functioning_container__list__item__icon {
   color: #656366;
-}
-
-.functioning_container__list__item__icon--purple {
-  color: #9356DC;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
 }
 
 .restaurant_container {
@@ -171,7 +176,6 @@ header {
   font-weight: 400;
   width: 100px;
   padding: 10px;
-  float: right;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -218,23 +222,19 @@ header {
   margin: 0;
 }
 
-.restaurant_container__card__icon--filled-heart {
-  display: none;
-}
-
 .restaurant_container__card__icon svg {
   font-size: 25px;
 }
-.restaurant_container__card__icon svg:hover {
-  fill: url(#heart-gradient);
-  background: linear-gradient(3deg, #FF79DA 0%, #9356DC 100%);
-  cursor: pointer;
-}
-.restaurant_container__card__icon svg:hover .restaurant_container__card__icon--filled-heart {
-  display: inline;
-}
-.restaurant_container__card__icon svg:hover .restaurant_container__card__icon--empty-heart {
+.restaurant_container__card__icon .restaurant_container__card__icon--filled-heart {
   display: none;
+}
+.restaurant_container__card__icon:hover .restaurant_container__card__icon--empty-heart {
+  display: none;
+}
+.restaurant_container__card__icon:hover .restaurant_container__card__icon--filled-heart {
+  display: inline-block;
+  fill: url(#heart-gradient);
+  cursor: pointer;
 }
 
 .footer {
@@ -256,8 +256,11 @@ header {
   row-gap: 10px;
 }
 
-.footer__list__item {
+.footer__list__item, .footer__list__item a {
   font-size: 18px;
   font-weight: 400;
   color: white;
+}
+.footer__list__item a {
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
