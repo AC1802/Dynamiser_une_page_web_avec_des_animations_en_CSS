@@ -74,8 +74,10 @@ header {
     padding: 20px 0 10px;
 }
 
-.container--small-padding {
-    padding: 10px;
+.container {
+    &--small-padding {
+        padding: 10px;
+    }
 }
 
 .logo {
@@ -89,42 +91,44 @@ header {
     row-gap: 20px;
     padding: 0 0 60px 0;
     background-color: $lighter-grey;
-}
 
-.location_container__city {
-    @include element-centered(row);
-    column-gap: 10px;
-    width: 100%;
-    background-color: lightgray;
-    box-shadow: inset 0px 2px 2px 0px #0000003d;
-}
+    &__city {
+        @include element-centered(row);
+        column-gap: 10px;
+        width: 100%;
+        background-color: lightgray;
+        box-shadow: inset 0px 2px 2px 0px #0000003d;
+    }
 
-.location_container__title {
-    @include h2-size;
-    width: 60%;
-    margin: 0;
-}
+    &__title {
+        @include h2-size;
+        width: 60%;
+        margin: 0;
+    }
 
-.location_container__subtitle {
-    @include p-size;
-    width: 80%;
-    margin: 0;
-}
+    &__subtitle {
+        @include p-size;
+        width: 80%;
+        margin: 0;
+    }
 
-.location_container__btn {
-    @include p-size;
-    @include gradient($button-degree);
-    @include border-radius(30px);
-    border: none;
-    color: white;
-    padding: 20px;
-    font-weight: 400;
-    box-shadow: 0px 6px 14px 0px #0000003d;
+    &__btn {
+        @include p-size;
+        @include gradient($button-degree);
+        @include border-radius(30px);
+        border: none;
+        color: white;
+        padding: 20px;
+        font-weight: 400;
+        box-shadow: 0px 6px 14px 0px #0000003d;
 
-    &:hover {
-        @include gradient-btn-hover;
+        &:hover {
+            @include gradient-btn-hover;
+        }
     }
 }
+
+
 
 .functioning_container__title {
     @include h2-size;
@@ -137,47 +141,49 @@ header {
     list-style: none;
     width: 100%;
     padding: 20px;
-}
 
-.functioning_container__list__item {
-    @include element-centered(row);
-    @include font-bold;
-    @include border-radius(15px);
-    gap: 20px;
-    font-size: 18px;
-    padding: 20px 40px 20px 0;
-    background-color: $lighter-grey;
-    width: 100%;
-    box-shadow: 0px 6px 7px 0px #DBDBDB;
+    &__item {
+        @include element-centered(row);
+        @include font-bold;
+        @include border-radius(15px);
+        gap: 20px;
+        font-size: 18px;
+        padding: 20px 40px 20px 0;
+        background-color: $lighter-grey;
+        width: 100%;
+        box-shadow: 0px 6px 7px 0px #DBDBDB;
+        position: relative;
+        vertical-align: middle;
 
+        &:hover {
+            background-color: $purple-grey;
+    
+            .functioning_container__list__item__icon {
+                color: $primary;
+            }
+        }
 
-    &:hover {
-        background-color: $purple-grey;
+        &__order {
+            @include element-centered(row);
+            @include border-radius(50%);
+            width: 25px;
+            height: 25px;
+            color: white;
+            background-color: $primary;
+            vertical-align: middle;
+            position: absolute;
+            left: -20px;
+            margin: 5px 0;
+        }
 
-        .functioning_container__list__item__icon {
-            color: $primary;
+        &__icon {
+            color: $dark-grey;
+            width: 18px;
+            height: 18px;
+            font-size: 18px;
         }
     }
 }
-
-.functioning_container__list__item__order {
-    @include element-centered(row);
-    @include border-radius(50%);
-    width: 25px;
-    height: 25px;
-    color: white;
-    background-color: $primary;
-    margin-left: -57px;
-}
-
-.functioning_container__list__item__icon {
-    color: $dark-grey;
-    width: 18px;
-    height: 18px;
-    font-size: 18px;
-}
-
-
 
 .restaurant_container {
     @include display-flex-direction(column);
@@ -185,72 +191,76 @@ header {
     background-color: $lighter-grey;
     padding: 50px 20px;
     height: 100%;
-}
 
-.restaurant_container__title {
-    @include h2-size;
-    margin-bottom: 0;
-}
+    a {
+        height: 15%;
+        text-decoration: none;
+    }
 
-.restaurant_container__card {
-    height: 15%;
-    width: 100%;
-    margin: 20px 0;
-}
+    &__title {
+        @include h2-size;
+        margin-bottom: 0;
+    }
 
-.restaurant_container__card__img_container {
-    width: 100%;
-    height: 200px;
-    position: relative;
-}
+    &__card {
+        height: 15%;
+        width: 100%;
+        margin: 20px 0;
+        
+        &__img_container {
+            width: 100%;
+            height: 200px;
+            position: relative;
+        }
 
-.restaurant_container__card__img__new_tag {
-    @include element-centered(row);
-    @include new-tag(5px);
-    @include p-size;
-    width: 100px;
-    padding: 10px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1;
-}
-
-.restaurant_container__card__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px 15px 0 0;
-
-    &:hover {
-        cursor: pointer;
+        &__img__new_tag {
+            @include element-centered(row);
+            @include new-tag(5px);
+            @include p-size;
+            width: 100px;
+            padding: 10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
     }
 }
 
-.restaurant_container__card__description {
-   @include display-flex-direction(row);
-   align-items: center;
-   justify-content: space-between;
-   border-radius: 0 0 15px 15px;
-   width: 100%;
-   background-color: white;
-   padding: 15px;
-}
+.restaurant_container__card {
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+    }
 
-.restaurant_container__card__text {
-    @include display-flex-direction(column);
-    row-gap: 5px;
-}
+    &__description {
+        @include display-flex-direction(row);
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 0 0 15px 15px;
+        width: 100%;
+        background-color: white;
+        padding: 15px;
+    }
 
-.restaurant_container__card__title {
-    @include font-bold;
-    font-size: 18px;
-    margin: 0;
-}
+    &__text {
+        @include display-flex-direction(column);
+        row-gap: 5px;
+        color: black;
+    }
 
-.restaurant_container__card__subtitle {
-    @include p-size;
-    margin: 0;
+    &__title {
+        @include font-bold;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    &__subtitle {
+        @include p-size;
+        margin: 0;
+    }
 }
 
 .restaurant_container__card__icon {
@@ -281,27 +291,51 @@ header {
 .footer {
     background-color: #535254;
     padding: 10px 20px;
-}
 
-.footer__img--white {
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg) brightness(105%) contrast(101%);
-    height: 22px;
-    margin: 10px 0;
-}
-
-.footer__list {
-    list-style: none;
-    padding: 0;
-    @include display-flex-direction(column);
-    row-gap: 10px;
-}
-
-.footer__list__item {
-    @include p-size;
-    color: white;
-
-    a {
-        @extend .footer__list__item;
-        text-decoration: none;
+    &__img--white {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(110deg) brightness(105%) contrast(101%);
+        height: 22px;
+        margin: 10px 0;
     }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        @include display-flex-direction(column);
+        row-gap: 10px;
+
+        &__item {
+            @include p-size;
+            color: white;
+        
+            a {
+                @extend .footer__list__item;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 767px) {
+// .functioning_container {
+//     &__list {
+//         @include display-flex-direction(row);
+
+//         &__item {
+//             @include element-centered(row);
+//             width: 33%;
+//             padding: 20px 0;
+//             font-size: 15px;
+
+//             &__order {
+//                 margin-left: 0;
+
+//             }
+//         }
+//     }
+// }
+}
+
+@media screen and (min-width: 768px) {
+
 }
