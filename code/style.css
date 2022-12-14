@@ -106,6 +106,10 @@ header {
   box-shadow: 0px 6px 7px 0px #DBDBDB;
   position: relative;
   vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .functioning_container__list__item:hover {
   background-color: #F9EFF9;
@@ -125,7 +129,7 @@ header {
   background-color: #9356DC;
   vertical-align: middle;
   position: absolute;
-  left: -20px;
+  left: -10px;
   margin: 5px 0;
 }
 .functioning_container__list__item__icon {
@@ -214,19 +218,26 @@ header {
   margin: 0;
 }
 
-.restaurant_container__card__icon svg {
-  font-size: 25px;
+.restaurant_container__card__icon i {
+  font-size: 18px;
 }
 .restaurant_container__card__icon .restaurant_container__card__icon--filled-heart {
   display: none;
+  color: black;
+}
+.restaurant_container__card__icon .restaurant_container__card__icon--empty-heart {
+  color: black;
 }
 .restaurant_container__card__icon:hover .restaurant_container__card__icon--empty-heart {
   display: none;
 }
 .restaurant_container__card__icon:hover .restaurant_container__card__icon--filled-heart {
-  display: inline-block;
-  fill: url(#heart-gradient);
+  background: linear-gradient(3deg, #FF79DA 0%, #9356DC 100%);
+  display: block;
   cursor: pointer;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .footer {
