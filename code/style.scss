@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
 //colors
 $primary: #9356DC; 
 $secondary: #FF79DA; 
@@ -44,9 +46,28 @@ $icon-degree: 3deg;
     background: linear-gradient($degree, $secondary 0%, $primary 100%);
 }
 
+@mixin button($button-degree) {
+    @include p-size;
+    @include gradient($button-degree);
+    @include border-radius(30px);
+    border: none;
+    color: white;
+    padding: 20px;
+    font-weight: 400;
+    box-shadow: 0px 6px 14px 0px #0000003d;
+}
+
 @mixin gradient-btn-hover {
     background: linear-gradient($button-degree, lighten($secondary, 5%) 0%, lighten($primary, 5%) 100%);
     box-shadow: 0 6px 14px 0 gray;
+}
+
+@mixin gradient-heart($icon-degree) {
+    @include gradient($icon-degree);
+    display: block;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 @mixin border-radius($radius) {
@@ -72,17 +93,28 @@ header {
     @include element-centered(row);
     width: 100%;
     padding: 20px 0 10px;
+    position: relative;
+
+    .header__icon_container {
+        position: absolute;
+        left: 20px;
+
+        i {
+            font-size: 24px;
+            color: black;
+        }
+    }
+
+    .logo {
+        width: 50%;
+        height: 50%;
+    }
 }
 
 .container {
     &--small-padding {
         padding: 10px;
     }
-}
-
-.logo {
-    width: 50%;
-    height: 50%;
 }
 
 .location_container {
@@ -113,14 +145,7 @@ header {
     }
 
     &__btn {
-        @include p-size;
-        @include gradient($button-degree);
-        @include border-radius(30px);
-        border: none;
-        color: white;
-        padding: 20px;
-        font-weight: 400;
-        box-shadow: 0px 6px 14px 0px #0000003d;
+        @include button($button-degree);
 
         &:hover {
             @include gradient-btn-hover;
@@ -261,10 +286,8 @@ header {
         margin: 0;
     }
 
-}
-
-.restaurant_container__card__icon {
-    i {
+    &__icon {
+        i {
             font-size: 18px;
         }
     
@@ -272,27 +295,137 @@ header {
             display: none;
             color: black;
         }
-
+    
         .restaurant_container__card__icon--empty-heart {
             color: black;
         }
         
         &:hover {
-                
+    
             .restaurant_container__card__icon--empty-heart {
                 display: none;
             }
         
             .restaurant_container__card__icon--filled-heart {
-                @include gradient($icon-degree);
-                display: block;
-                cursor: pointer;
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
+                @include gradient-heart($icon-degree);
+            }
+        } 
+    }
+}
+
+// style des menus
+.restaurant_container {
+    .restaurant__img_wrapper {
+        height: 250px;
+        width: 100%;
+
+        .restaurant__img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .restaurant_menu_container {
+        padding: 20px;
+        border-radius: 50px 50px 0 0;
+        background-color: orange;
+
+        .restaurant_menu__header {
+            @include display-flex-direction(row);
+            align-items: center;
+            justify-content: space-between;
+            
+
+            &__title {
+
+                h2 {
+                    @include h2-size;
+                    font-family: 'Shrikhand', cursive;
+                }
+            }
+
+            &__icon {
+                i {
+                    font-size: 18px;
+                }
+
+                .restaurant_menu__header__icon--filled-heart {
+                    display: none;
+                }
+    
+                &:hover {
+                    .restaurant_menu__header__icon--empty-heart {
+                        display: none;
+                    }
+
+                    .restaurant_menu__header__icon--filled-heart {
+                        @include gradient-heart($icon-degree);
+                    }
+                }
             }
         }
+
+        .restaurant_menu__entry {
+            &__article_list {
+                @include display-flex-direction(column);
+                row-gap: 5px;
+
+                article {
+                    @include display-flex-direction(row);
+                    @include border-radius(10px);
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 5px;
+                    background-color: white;
+
+                    .article__text {
+                        @include display-flex-direction(column);
+                        
+                        h4 {
+                            font-size: 18px;
+                            margin: 0;
+                        }
+
+                        p {
+                            font-size: 14px;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        // .restaurant_menu__dish {}
+
+        // .restaurant_menu__dessert {}
+
+        section {
+            h3 {
+                @include p-size;
+                text-transform: uppercase;
+                width: 45px;
+                padding: 0 0 3px 0;
+                border-bottom: $tertiary 3px solid;
+            }
+        }
+    }
+
+    .restaurant__button {
+        @include button($button-degree);
+
+        &:hover {
+            @include gradient-btn-hover;
+        }
+    }
 }
+
+.container--no-padding {
+    padding: 0;
+}
+
+
+
 
 .footer {
     background-color: #535254;

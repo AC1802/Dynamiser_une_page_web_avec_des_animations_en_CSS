@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -15,15 +16,23 @@ header {
   align-items: center;
   width: 100%;
   padding: 20px 0 10px;
+  position: relative;
+}
+header .header__icon_container {
+  position: absolute;
+  left: 20px;
+}
+header .header__icon_container i {
+  font-size: 24px;
+  color: black;
+}
+header .logo {
+  width: 50%;
+  height: 50%;
 }
 
 .container--small-padding {
   padding: 10px;
-}
-
-.logo {
-  width: 50%;
-  height: 50%;
 }
 
 .location_container {
@@ -217,7 +226,6 @@ header {
   font-weight: 400;
   margin: 0;
 }
-
 .restaurant_container__card__icon i {
   font-size: 18px;
 }
@@ -234,10 +242,105 @@ header {
 .restaurant_container__card__icon:hover .restaurant_container__card__icon--filled-heart {
   background: linear-gradient(3deg, #FF79DA 0%, #9356DC 100%);
   display: block;
-  cursor: pointer;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.restaurant_container .restaurant__img_wrapper {
+  height: 250px;
+  width: 100%;
+}
+.restaurant_container .restaurant__img_wrapper .restaurant__img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.restaurant_container .restaurant_menu_container {
+  padding: 20px;
+  border-radius: 50px 50px 0 0;
+  background-color: orange;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__header__title h2 {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Shrikhand", cursive;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__header__icon i {
+  font-size: 18px;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__header__icon .restaurant_menu__header__icon--filled-heart {
+  display: none;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__header__icon:hover .restaurant_menu__header__icon--empty-heart {
+  display: none;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__header__icon:hover .restaurant_menu__header__icon--filled-heart {
+  background: linear-gradient(3deg, #FF79DA 0%, #9356DC 100%);
+  display: block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: white;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__text {
+  display: flex;
+  flex-direction: column;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__text h4 {
+  font-size: 18px;
+  margin: 0;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__text p {
+  font-size: 14px;
+  margin: 0;
+}
+.restaurant_container .restaurant_menu_container section h3 {
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  width: 45px;
+  padding: 0 0 3px 0;
+  border-bottom: #99E2D0 3px solid;
+}
+.restaurant_container .restaurant__button {
+  font-size: 18px;
+  font-weight: 400;
+  background: linear-gradient(163deg, #FF79DA 0%, #9356DC 100%);
+  border-radius: 30px;
+  border: none;
+  color: white;
+  padding: 20px;
+  font-weight: 400;
+  box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.2392156863);
+}
+.restaurant_container .restaurant__button:hover {
+  background: linear-gradient(163deg, #ff93e1 0%, #a16be0 100%);
+  box-shadow: 0 6px 14px 0 gray;
+}
+
+.container--no-padding {
+  padding: 0;
 }
 
 .footer {
