@@ -115,6 +115,14 @@ header {
     &--small-padding {
         padding: 10px;
     }
+
+    &--no-padding {
+        padding: 0;
+    }
+
+    &--centered {
+        @include element-centered(column);
+    }
 }
 
 .location_container {
@@ -327,9 +335,10 @@ header {
     }
 
     .restaurant_menu_container {
+        width: 100%;
         padding: 20px;
         border-radius: 50px 50px 0 0;
-        background-color: orange;
+        background-color: $lighter-grey;
 
         .restaurant_menu__header {
             @include display-flex-direction(row);
@@ -366,17 +375,17 @@ header {
             }
         }
 
-        .restaurant_menu__entry {
+        .restaurant_menu__entry, .restaurant_menu__dish, .restaurant_menu__dessert {
             &__article_list {
                 @include display-flex-direction(column);
-                row-gap: 5px;
+                row-gap: 10px;
 
                 article {
                     @include display-flex-direction(row);
-                    @include border-radius(10px);
+                    @include border-radius(15px);
                     align-items: center;
                     justify-content: space-between;
-                    padding: 5px;
+                    padding: 8px;
                     background-color: white;
 
                     .article__text {
@@ -396,10 +405,6 @@ header {
             }
         }
 
-        // .restaurant_menu__dish {}
-
-        // .restaurant_menu__dessert {}
-
         section {
             h3 {
                 @include p-size;
@@ -413,19 +418,13 @@ header {
 
     .restaurant__button {
         @include button($button-degree);
+        padding: 20px 40px;
 
         &:hover {
             @include gradient-btn-hover;
         }
     }
 }
-
-.container--no-padding {
-    padding: 0;
-}
-
-
-
 
 .footer {
     background-color: #535254;
