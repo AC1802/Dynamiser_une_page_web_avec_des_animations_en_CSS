@@ -31,19 +31,6 @@ header .logo {
   height: 50%;
 }
 
-.container--small-padding {
-  padding: 10px;
-}
-.container--no-padding {
-  padding: 0;
-}
-.container--centered {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .location_container {
   display: flex;
   flex-direction: column;
@@ -313,17 +300,25 @@ header .logo {
   padding: 8px;
   background-color: white;
 }
-.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__text, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__text, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__text {
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__title, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__title, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__title {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
-.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__text h4, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__text h4, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__text h4 {
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__title h4, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__title h4, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__title h4 {
   font-size: 18px;
   margin: 0;
 }
-.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__text p, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__text p, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__text p {
-  font-size: 14px;
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__title .article__subtitle, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__title .article__subtitle, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__title .article__subtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__title .article__subtitle p, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__title .article__subtitle p, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__title .article__subtitle p {
   margin: 0;
+}
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__title .article__subtitle .article__price, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__title .article__subtitle .article__price, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__title .article__subtitle .article__price {
+  font-weight: bold;
 }
 .restaurant_container .restaurant_menu_container section h3 {
   font-size: 18px;
@@ -343,11 +338,25 @@ header .logo {
   padding: 20px;
   font-weight: 400;
   box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.2392156863);
-  padding: 20px 40px;
+  padding: 15px 40px;
+  margin: 30px 0;
 }
 .restaurant_container .restaurant__button:hover {
   background: linear-gradient(163deg, #ff93e1 0%, #a16be0 100%);
   box-shadow: 0 6px 14px 0 gray;
+}
+
+.container--small-padding {
+  padding: 10px;
+}
+.container--centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container--no-padding {
+  padding: 0;
 }
 
 .footer {
