@@ -248,6 +248,7 @@ header {
     }
 }
 
+//section localisation
 .location_container {
     @include element-centered(column);
     text-align: center;
@@ -284,6 +285,7 @@ header {
     }
 }
 
+//section description de l'application
 .functioning_container__title {
     @include h2-size;
 }
@@ -340,6 +342,7 @@ header {
     }
 }
 
+//liste des restaurants
 .restaurant_container {
     @include display-flex-direction(column);
     justify-content: space-between;
@@ -348,7 +351,6 @@ header {
     height: 100%;
 
     a {
-        height: 15%;
         text-decoration: none;
     }
 
@@ -481,7 +483,6 @@ header {
 
             &__icon {
                 transition: display 5s;
-                display: none;
 
                 i {
                     font-size: 18px;
@@ -686,31 +687,77 @@ header {
     }
 
     .restaurant_container {
-        @include element-centered(row);
+        @include display-flex-direction(row);
+        justify-content: space-evenly;
+        column-gap: 10px;
         flex-wrap: wrap;
 
         &__title {
             width: 100%;
         }
 
-        // a {
-        //     @include 
-        // }
-
+        a {
+            width: 24%;
+            margin: 0;
+        }
     }
 
-    .footer {
-        height: 100px;
+    // style des menus
+    .restaurant_container {
+        .restaurant__img_wrapper {
+            height: 300px;
+        }
 
-        &__img--white {
+        .restaurant_menu_container {
             @include element-centered(row);
-            height: 20%;
-            width: 20%;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 40px;
+            margin-top: 0;
+
+            .restaurant_menu__header {
+                width: 100%;
+            }
+
+            section {
+                article {
+                    width: 400px;
+                }
+            }
+        }
+    }
+    // fin style des menus
+
+    .footer {
+
+        &__image_container {
+            @include element-centered(row);
+
+            &__img--white {
+                width: 126px;
+                height: 22px
+            }
         }
 
         &__list {
             @include element-centered(row);
             column-gap: 30px;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .restaurant_menu_container {
+        .restaurant_menu__dessert {
+            @include display-flex-direction(column);
+            flex-grow: 2;
+            
+            .restaurant_menu__dessert__article_list {
+                article {
+                    width: 100%;
+                }
+            }
         }
     }
 }
