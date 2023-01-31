@@ -111,7 +111,7 @@ body {
         user-select: none;
         margin: 0 10px;
         font-family: 'Shrikhand', cursive;
-        font-size: 64px;
+        font-size: 50px;
         background: linear-gradient(270deg, rgba(255,121,214,1) 0%, rgba(147,86,220,1) 100%);
         background-clip: text;
         -webkit-background-clip: text;
@@ -260,8 +260,20 @@ header {
         @include element-centered(row);
         column-gap: 10px;
         width: 100%;
+        height: 30px;
         background-color: lightgray;
         box-shadow: inset 0px 2px 2px 0px #0000003d;
+
+        &__icon {
+            margin-left: 50px;
+        }
+
+        &__input {
+            background: transparent;
+            border: none;
+            color: black;
+            font-weight: 500;
+        }
     }
 
     &__title {
@@ -338,6 +350,7 @@ header {
             width: 18px;
             height: 18px;
             font-size: 18px;
+            margin-left: 40px;
         }
     }
 }
@@ -475,7 +488,7 @@ header {
 
             &__title {
 
-                h2 {
+                h1 {
                     @include h2-size;
                     font-family: 'Shrikhand', cursive;
                 }
@@ -573,7 +586,7 @@ header {
                         padding: 10px 15px 10px 10px;
 
                         h4 {
-                            font-size: 18px;
+                            font-size: 12px;
                             margin: 0;
                             text-overflow: ellipsis;
                             width: 75%;
@@ -592,6 +605,7 @@ header {
                                 white-space: nowrap;
                                 text-overflow: ellipsis;
                                 width: 75%;
+                                font-size: 10px;
                             }
 
                             .article__price {
@@ -674,6 +688,30 @@ header {
     }
 }
 
+@media screen and (min-width: 426px) {
+.restaurant_container {
+    .restaurant_menu_container {
+        .restaurant_menu__entry, .restaurant_menu__dish, .restaurant_menu__dessert {
+            &__article_list {
+                article {
+                    .article__title {
+                        h4 {
+                            font-size: 16px;
+                        }
+    
+                        .article__subtitle {
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}
+
 @media screen and (min-width: 1024px) {
     header {
         .logo {
@@ -696,7 +734,7 @@ header {
             width: 100%;
         }
 
-        a {
+        article {
             width: 24%;
             margin: 0;
         }
