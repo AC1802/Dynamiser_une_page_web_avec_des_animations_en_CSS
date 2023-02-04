@@ -530,6 +530,8 @@ header {
         }
 
         .restaurant_menu__entry, .restaurant_menu__dish, .restaurant_menu__dessert {
+            margin: 10px;
+
             &__article_list {
                 @include display-flex-direction(column);
                 row-gap: 10px;
@@ -585,7 +587,7 @@ header {
                         row-gap: 5px;
                         padding: 10px 15px 10px 10px;
 
-                        h4 {
+                        h3 {
                             font-size: 12px;
                             margin: 0;
                             text-overflow: ellipsis;
@@ -624,7 +626,7 @@ header {
         }
 
         section {
-            h3 {
+            h2 {
                 @include p-size;
                 text-transform: uppercase;
                 width: 45px;
@@ -695,7 +697,7 @@ header {
             &__article_list {
                 article {
                     .article__title {
-                        h4 {
+                        h3 {
                             font-size: 16px;
                         }
     
@@ -748,7 +750,6 @@ header {
 
         .restaurant_menu_container {
             @include element-centered(row);
-            align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             padding: 40px;
@@ -760,7 +761,7 @@ header {
 
             section {
                 article {
-                    width: 400px;
+                    width: 450px;
                 }
             }
         }
@@ -785,17 +786,17 @@ header {
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
+@media screen and (min-width: 1351px) {
+.restaurant_container {
     .restaurant_menu_container {
-        .restaurant_menu__dessert {
-            @include display-flex-direction(column);
-            flex-grow: 2;
-            
-            .restaurant_menu__dessert__article_list {
+
+        .restaurant_menu__entry, .restaurant_menu__dish, .restaurant_menu__dessert {
+            &__article_list {
                 article {
-                    width: 100%;
+                    width: 403px;
                 }
             }
         }
     }
+}
 }

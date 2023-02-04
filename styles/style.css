@@ -508,6 +508,9 @@ header .logo {
   -webkit-animation: articleload 5s;
           animation: articleload 5s;
 }
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry, .restaurant_container .restaurant_menu_container .restaurant_menu__dish, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert {
+  margin: 10px;
+}
 .restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list {
   display: flex;
   flex-direction: column;
@@ -561,7 +564,7 @@ header .logo {
   row-gap: 5px;
   padding: 10px 15px 10px 10px;
 }
-.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__title h4, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__title h4, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__title h4 {
+.restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__title h3, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__title h3, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__title h3 {
   font-size: 12px;
   margin: 0;
   text-overflow: ellipsis;
@@ -589,7 +592,7 @@ header .logo {
 .restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article--checked .fa-circle-check, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article--checked .fa-circle-check, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article--checked .fa-circle-check {
   display: none;
 }
-.restaurant_container .restaurant_menu_container section h3 {
+.restaurant_container .restaurant_menu_container section h2 {
   font-size: 18px;
   font-weight: 400;
   text-transform: uppercase;
@@ -654,7 +657,7 @@ header .logo {
 }
 
 @media screen and (min-width: 426px) {
-  .restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__title h4, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__title h4, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__title h4 {
+  .restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__title h3, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__title h3, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__title h3 {
     font-size: 16px;
   }
   .restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article .article__title .article__subtitle p, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article .article__title .article__subtitle p, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article .article__title .article__subtitle p {
@@ -695,7 +698,6 @@ header .logo {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 40px;
@@ -705,7 +707,7 @@ header .logo {
     width: 100%;
   }
   .restaurant_container .restaurant_menu_container section article {
-    width: 400px;
+    width: 450px;
   }
   .footer__image_container {
     display: flex;
@@ -726,13 +728,8 @@ header .logo {
          column-gap: 30px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
-  .restaurant_menu_container .restaurant_menu__dessert {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 2;
-  }
-  .restaurant_menu_container .restaurant_menu__dessert .restaurant_menu__dessert__article_list article {
-    width: 100%;
+@media screen and (min-width: 1351px) {
+  .restaurant_container .restaurant_menu_container .restaurant_menu__entry__article_list article, .restaurant_container .restaurant_menu_container .restaurant_menu__dish__article_list article, .restaurant_container .restaurant_menu_container .restaurant_menu__dessert__article_list article {
+    width: 403px;
   }
 }/*# sourceMappingURL=style.css.map */
